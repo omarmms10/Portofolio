@@ -17,13 +17,16 @@
         }
 
         .project-thumbnail {
-    width: 100%;
-    height: 200px; /* Adjust the height as needed */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    border-bottom: 1px solid #ddd; /* Optional: adds a border at the bottom of the image */
-}
+            width: 100%;
+            height: 200px;
+            /* Adjust the height as needed */
+            object-fit: cover;
+            /* Ensures the image covers the area without distortion */
+            border-bottom: 1px solid #ddd;
+            /* Optional: adds a border at the bottom of the image */
+        }
 
-        
+
         .navbar {
             background-color: #007bff;
         }
@@ -68,26 +71,74 @@
             padding: 20px 0;
             text-align: center;
         }
+
         .navbar-brand img {
-        border: 2px solid white;
-    }
+            border: 2px solid white;
+        }
 
-    .navbar-brand span {
-        font-weight: 500;
-        color: white;
-        font-size: 1.2rem;
-    }
+        .navbar-brand span {
+            font-weight: 500;
+            color: white;
+            font-size: 1.2rem;
+        }
 
-    .footer .social-links a {
-        margin: 0 10px;
-        font-size: 24px;
-        color: white;
-        text-decoration: none;
-    }
+        .footer .social-links a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
 
-    .footer .social-links a:hover {
-        color: #f0f0f0;
-    }
+        .footer .social-links a:hover {
+            color: #f0f0f0;
+        }
+
+        .project-card {
+            margin-bottom: 20px;
+        }
+        .collapse {
+            margin-top: 10px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .section-subtitle {
+            font-size: 1.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+        .section-subtitle:hover {
+            color: #0056b3;
+        }
+        .project-category {
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            color: #495057;
+        }
+        .project-card {
+            margin-bottom: 30px;
+        }
+        .project-thumbnail {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .hover-shadow:hover .project-thumbnail {
+            transform: scale(1.05);
+        }
+        .card {
+            border: none;
+            transition: box-shadow 0.3s ease;
+        }
+        .hover-shadow:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 
@@ -98,8 +149,8 @@
         <div class="container">
             <!-- Profile Image and Name -->
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img id="profileImage" src="./photo_2023-09-30_17-49-43.jpg" alt="Omar Adly" class="rounded-circle" width="60" height="60"
-                    style="cursor: pointer;">
+                <img id="profileImage" src="./myPic.jpg" alt="Omar Adly" class="rounded-circle"
+                    width="60" height="60" style="cursor: pointer;">
                 <span class="ms-2">Omar Adly</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -137,7 +188,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body text-center">
-                    <img src="./photo_2023-09-30_17-49-43.jpg" alt="Omar Adly" class="img-fluid">
+                    <img src="./myPic.jpg" alt="Omar Adly" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -151,7 +202,7 @@
         <div class="container">
             <h1>Omar Adly</h1>
             <p>Machine Learning & Software Engineering Enthusiast</p>
-            
+
         </div>
     </section>
 
@@ -159,287 +210,440 @@
     <!-- About Section -->
     <section id="about" class="container my-5">
         <h2 class="section-title">Summary</h2>
-        <p>An ambitious and detail-oriented Machine Learning and Software Engineering enthusiast, with a solid academic foundation
-        and hands-on experience in developing innovative solutions. Skilled in various programming languages and tools, with a
-        strong emphasis on full-stack development, artificial intelligence, and problem-solving. Eager to contribute to
-        impactful projects while continuously expanding knowledge in cutting-edge technologies. A dedicated professional aiming
-        to leverage technical expertise and collaborative skills to achieve team goals and deliver high-quality results in a
-        fast-paced environment.</p>
+        <p>An ambitious and detail-oriented Machine Learning and Software Engineering enthusiast, with a solid academic
+            foundation
+            and hands-on experience in developing innovative solutions. Skilled in various programming languages and
+            tools, with a
+            strong emphasis on full-stack development, artificial intelligence, and problem-solving. Eager to contribute
+            to
+            impactful projects while continuously expanding knowledge in cutting-edge technologies. A dedicated
+            professional aiming
+            to leverage technical expertise and collaborative skills to achieve team goals and deliver high-quality
+            results in a
+            fast-paced environment.</p>
+    </section>
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="container my-5">
+        <h2 class="section-title text-center mb-4">Accomplishments & Projects</h2>
+    
+        <!-- Web Development -->
+        <div class="mb-4">
+            <h3 class="section-subtitle" data-toggle="collapse" data-target="#webDevCollapse">Web Development</h3>
+            <div id="webDevCollapse" class="collapse">
+        
+                <!-- General Web Development Projects -->
+                <h4 class="project-category" data-toggle="collapse" data-target="#generalProjectsCollapse">General Projects</h4>
+                <div id="generalProjectsCollapse" class="collapse">
+                    <div class="row">
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/AIO.png" alt="Digital Marketing Website AIO"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Digital Marketing Website AIO" data-tech="HTML, CSS, JavaScript"
+                                    data-link="https://github.com/your-repo/DigitalMarketing">
+                                <div class="card-body">
+                                    <h5 class="card-title">Digital Marketing Website AIO</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/BookStore.jpg" alt="Book Store Website"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Book Store Website" data-tech="HTML, CSS, PHP, SQL"
+                                    data-link="https://github.com/your-repo/BookStore">
+                                <div class="card-body">
+                                    <h5 class="card-title">Book Store Website</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/FootballStore.jpg" alt="Football Store Website"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Football Store Website" data-tech="HTML, CSS, JavaScript, NodeJS"
+                                    data-link="https://github.com/your-repo/FootballStore">
+                                <div class="card-body">
+                                    <h5 class="card-title">Football Store Website</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/HLHB.png" alt="HLHB Healthy and Fitness Website"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="HLHB Healthy and Fitness Website"
+                                    data-tech="NodeJS, HTML, CSS, JavaScript, Python, Flask"
+                                    data-link="https://github.com/your-repo/HLHB">
+                                <div class="card-body">
+                                    <h5 class="card-title">HLHB Healthy and Fitness Website</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- ASP.NET Projects -->
+                <h4 class="project-category" data-toggle="collapse" data-target="#aspNetProjectsCollapse">ASP.NET Projects</h4>
+                <div id="aspNetProjectsCollapse" class="collapse">
+                    <div class="row">
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/DutyMaster.png" alt="Task Management System - DutyMaster"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Task Management System - DutyMaster"
+                                    data-tech="ASP.NET, C#, SQL, Bootstrap 4, HTML5, CSS3, JavaScript"
+                                    data-link="https://github.com/your-repo/DutyMaster">
+                                <div class="card-body">
+                                    <h5 class="card-title">Task Management System - DutyMaster</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/ProgrammingTutor.png" alt="Programming Tutor for Kids"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Programming Tutor for Kids"
+                                    data-tech="ASP.NET, C#, SQL, Bootstrap 4, HTML5, CSS3, JavaScript"
+                                    data-link="https://github.com/your-repo/ProgrammingTutor">
+                                <div class="card-body">
+                                    <h5 class="card-title">Programming Tutor for Kids</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    
+        <!-- Data Science & Machine Learning -->
+        <div class="mb-4">
+            <h3 class="section-subtitle" data-toggle="collapse" data-target="#dsmlCollapse">Data Science & Machine Learning</h3>
+            <div id="dsmlCollapse" class="collapse">
+        
+                <!-- Classification Projects -->
+                <h4 class="project-category" data-toggle="collapse" data-target="#classificationProjectsCollapse">Classification
+                    Projects</h4>
+                <div id="classificationProjectsCollapse" class="collapse">
+                    <div class="row">
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/CancerDetection.jpg" alt="Cancer Detection"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Cancer Detection"
+                                    data-tech="Logistic Regression, KNN, Decision Trees, Random Forests, Python"
+                                    data-link="https://github.com/omarmms10/Cancer-Detection">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cancer Detection</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/EmotionClassi.jpg" alt="Emotions Classification"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Emotions Classification" data-tech="Logistic Regression, Python"
+                                    data-link="https://github.com/omarmms10/Emotions-Classsifcation">
+                                <div class="card-body">
+                                    <h5 class="card-title">Emotions Classification</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/MusicGenreClassi.jpg" alt="Music Genre Classification"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Music Genre Classification" data-tech="Neural Network, Python"
+                                    data-link="https://github.com/omarmms10/Music-Genre-Classification">
+                                <div class="card-body">
+                                    <h5 class="card-title">Music Genre Classification</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/FlowerClassi.jpg" alt="CNN Flower Classification"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="CNN Flower Classification" data-tech="VGG, ResNet, Ensemble, GoogleNet, Python"
+                                    data-link="https://github.com/omarmms10/CNN-Flower-Classification">
+                                <div class="card-body">
+                                    <h5 class="card-title">CNN Flower Classification</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/CatsDogsRecog.jpg" alt="Cats and Dogs Speech Recognition"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Cats and Dogs Speech Recognition" data-tech="Neural Network, Python"
+                                    data-link="https://github.com/omarmms10/Cats-and-Dogs-speech-Recognition">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cats and Dogs Speech Recognition</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Prediction & Analysis Projects -->
+                <h4 class="project-category" data-toggle="collapse" data-target="#predictionAnalysisCollapse">Prediction &
+                    Analysis Projects</h4>
+                <div id="predictionAnalysisCollapse" class="collapse">
+                    <div class="row">
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/MoviesSentimentAnalysis.jpeg"
+                                    alt="Analyzing Movie Reviews (Sentiment Analysis)" class="card-img-top project-thumbnail"
+                                    data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Analyzing Movie Reviews (Sentiment Analysis)" data-tech="BERT, ROBERTA, Python"
+                                    data-link="https://github.com/omarmms10/Analyzing-Movies-Reviews-Sentiment-Analysis-Using-BERT-and-ROBERTA">
+                                <div class="card-body">
+                                    <h5 class="card-title">Analyzing Movie Reviews (Sentiment Analysis)</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/Ventilator.jpg" alt="Ventilator Pressure Prediction"
+                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Ventilator Pressure Prediction"
+                                    data-tech="Box-Cox transformation, Bidirectional LSTM, Python"
+                                    data-link="https://github.com/omarmms10/Ventilator-Pressure-Prediction">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ventilator Pressure Prediction</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 project-card">
+                            <div class="card shadow-sm hover-shadow">
+                                <img src="./imgs/ProjectsImgs/Translating.jpg"
+                                    alt="Translation from English to French and Arabic" class="card-img-top project-thumbnail"
+                                    data-bs-toggle="modal" data-bs-target="#projectModal"
+                                    data-title="Translation from English to French and Arabic"
+                                    data-tech="Bidirectional LSTM, Python"
+                                    data-link="https://github.com/omarmms10/Translation-from-English-to-French-and-Arabic">
+                                <div class="card-body">
+                                    <h5 class="card-title">Translation from English to French and Arabic</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <h4 class="project-category" data-toggle="collapse" data-target="#neuralNetworkFrameworksCollapse">Neural Network
+                    Frameworks</h4>
+                <div id="neuralNetworkFrameworksCollapse" class="collapse">
+                <div class="row">
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/ANN.jpg"
+                                alt="Building Artificial Neural Network from Scratch" class="card-img-top project-thumbnail"
+                                data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Building Artificial Neural Network from Scratch" data-tech="Python"
+                                data-link="https://github.com/omarmms10/Building-Artificial-Neural-Network-from-Scratch">
+                            <div class="card-body">
+                                <h5 class="card-title">Building Artificial Neural Network from Scratch</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/PyTen.jpg"
+                                alt="Neural Networks under PyTorch and TensorFlow" class="card-img-top project-thumbnail"
+                                data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Neural Networks under PyTorch and TensorFlow" data-tech="Python"
+                                data-link="https://github.com/omarmms10/Neural-Networks-Under-PyTorch-and-TensorFlow">
+                            <div class="card-body">
+                                <h5 class="card-title">Neural Networks under PyTorch and TensorFlow</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Embedded Systems & Hardware Control -->
+        <div class="mb-4">
+            <h3 class="section-subtitle" data-toggle="collapse" data-target="#embeddedCollapse">Embedded Systems & Hardware
+                Control</h3>
+            <div id="embeddedCollapse" class="collapse">
+                <div class="row">
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/BalanceBall.jpeg" alt="Balancing a Ball on Beam"
+                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Balancing a Ball on Beam" data-tech="Arduino"
+                                data-link="https://github.com/omarmms10/Balancing-a-Ball-on-Beam">
+                            <div class="card-body">
+                                <h5 class="card-title">Balancing a Ball on Beam</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/RobotArm.jpg" alt="Robotic Arm"
+                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Robotic Arm" data-tech="Arduino"
+                                data-link="https://github.com/omarmms10/Robotic-Arm">
+                            <div class="card-body">
+                                <h5 class="card-title">Robotic Arm</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/DataAcqui.jpg" alt="Data Acquisition System"
+                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Data Acquisition System" data-tech="Arduino"
+                                data-link="https://github.com/omarmms10/Data-Acquisition-System">
+                            <div class="card-body">
+                                <h5 class="card-title">Data Acquisition System</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Image Processing & Computer Vision -->
+        <div class="mb-4">
+            <h3 class="section-subtitle" data-toggle="collapse" data-target="#imageProcessingCollapse">Image Processing &
+                Computer Vision</h3>
+            <div id="imageProcessingCollapse" class="collapse">
+                <div class="row">
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/NoiseDetec.jpg" alt="Noise Detection Techniques in Images"
+                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Noise Detection Techniques in Images"
+                                data-tech="Salt-and-pepper noise, Sobel Edge, Canny Edge, Median Filter, Python"
+                                data-link="https://github.com/omarmms10/Noise-Detection-Techniques">
+                            <div class="card-body">
+                                <h5 class="card-title">Noise Detection Techniques in Images</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/FaceRecognition.jpg" alt="Face Recognition"
+                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Face Recognition" data-tech="PCA, KNN, Python"
+                                data-link="https://github.com/omarmms10/Face-Recognition">
+                            <div class="card-body">
+                                <h5 class="card-title">Face Recognition</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Clustering & Statistical Analysis -->
+        <div class="mb-4">
+            <h3 class="section-subtitle" data-toggle="collapse" data-target="#clusteringCollapse">Clustering & Statistical
+                Analysis</h3>
+            <div id="clusteringCollapse" class="collapse">
+                <div class="row">
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/MessiRonaldo.jpg"
+                                alt="Clustering Techniques on Messi and Ronaldo Stats"
+                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Clustering Techniques on Messi and Ronaldo Stats"
+                                data-tech="Naive Bayes, K-Medoids, Agglomerative Hierarchical, Python"
+                                data-link="https://github.com/omarmms10/Clustering-Techniques-Messi-Ronaldo-Stats">
+                            <div class="card-body">
+                                <h5 class="card-title">Clustering Techniques on Messi and Ronaldo Stats</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Game Development -->
+        <div class="mb-4">
+            <h3 class="section-subtitle" data-toggle="collapse" data-target="#gameDevCollapse">Game Development</h3>
+            <div id="gameDevCollapse" class="collapse">
+                <div class="row">
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/XO.jpg" alt="XO Game" class="card-img-top project-thumbnail"
+                                data-bs-toggle="modal" data-bs-target="#projectModal" data-title="XO Game"
+                                data-tech="Minimax, Python" data-link="https://github.com/omarmms10/XO-Game">
+                            <div class="card-body">
+                                <h5 class="card-title">XO Game (Player vs AI)</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Software Modeling & Design -->
+        <div class="mb-4">
+            <h3 class="section-subtitle" data-toggle="collapse" data-target="#modelingCollapse">Software Modeling & Design
+            </h3>
+            <div id="modelingCollapse" class="collapse">
+                <div class="row">
+                    <div class="col-md-4 project-card">
+                        <div class="card shadow-sm hover-shadow">
+                            <img src="./imgs/ProjectsImgs/SportsShopSoftware.jpg" alt="Sports Shop Software"
+                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                                data-title="Sports Shop Software"
+                                data-tech="Dataflow, ERD, Class Diagram, Sequence, Package, Activity, State Machine, Use Case"
+                                data-link="https://github.com/omarmms10/Sports-Shop-Software">
+                            <div class="card-body">
+                                <h5 class="card-title">Sports Shop Software</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     
-
-    <!-- Projects Section -->
-<section id="projects" class="container my-5">
-    <h2 class="section-title">Accomplishments & Projects</h2>
-    <div class="row">
-        <!-- Project Thumbnails -->
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="./AIO.png" alt="Digital Marketing Website AIO"
-                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                    data-title="Digital Marketing Website AIO" data-tech="HTML, CSS, JavaScript"
-                    data-link="https://my-projects-aiocreativeagency-aio1.vercel.app/">
-                <div class="card-body">
-                    <h5 class="card-title">Digital Marketing Website AIO</h5>
+    <!-- Modal Template -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="projectModalImage" alt="Project" class="img-fluid mb-3">
+                    <p id="projectModalTech"></p>
+                    <a id="projectModalLink" href="#" class="btn btn-primary" target="_blank">View Project</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="./MoviesSentimentAnalysis.jpeg" alt="Analyzing Movie Reviews (Sentiment Analysis)"
-                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                    data-title="Analyzing Movie Reviews (Sentiment Analysis)" data-tech="BERT, ROBERTA, Python"
-                    data-link="https://github.com/omarmms10/Analyzing-Movies-Reviews-Sentiment-Analysis-Using-BERT-and-ROBERTA">
-                <div class="card-body">
-                    <h5 class="card-title">Analyzing Movie Reviews (Sentiment Analysis)</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="path/to/thumbnail3.jpg" alt="Balancing a Ball on Beam" class="card-img-top project-thumbnail"
-                    data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Balancing a Ball on Beam"
-                    data-tech="Arduino" data-link="https://github.com/omarmms10/Balancing-of-a-ball-on-beam">
-                <div class="card-body">
-                    <h5 class="card-title">Balancing a Ball on Beam</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="path/to/thumbnail4.jpg" alt="Book Store Website" class="card-img-top project-thumbnail"
-                    data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Book Store Website"
-                    data-tech="HTML, CSS, PHP, SQL" data-link="https://github.com/omarmms10/Book-Store-Website">
-                <div class="card-body">
-                    <h5 class="card-title">Book Store Website</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="path/to/thumbnail5.jpg" alt="Building Artificial Neural Network"
-                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                    data-title="Building Artificial Neural Network from Scratch" data-tech="Python"
-                    data-link="https://github.com/omarmms10/Building-Artificial-Neural-Network-from-Scratch">
-                <div class="card-body">
-                    <h5 class="card-title">Building Artificial Neural Network from Scratch</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="path/to/thumbnail6.jpg" alt="Cancer Detection" class="card-img-top project-thumbnail"
-                    data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Cancer Detection"
-                    data-tech="Logistic Regression, KNN, Decision Trees, Random Forests, Python"
-                    data-link="https://github.com/omarmms10/Cancer-Detection">
-                <div class="card-body">
-                    <h5 class="card-title">Cancer Detection</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="path/to/thumbnail7.jpg" alt="Cats and Dogs Speech Recognition"
-                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                    data-title="Cats and Dogs Speech Recognition" data-tech="Neural Network, Python"
-                    data-link="https://github.com/omarmms10/Cats-and-Dogs-speech-Recognition">
-                <div class="card-body">
-                    <h5 class="card-title">Cats and Dogs Speech Recognition</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="path/to/thumbnail8.jpg" alt="Clustering Techniques on Messi and Ronaldo Stats"
-                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                    data-title="Clustering Techniques on Messi and Ronaldo Stats"
-                    data-tech="Naive Bayes, K-Medoids, Agglomerative Hierarchical, Python"
-                    data-link="https://github.com/omarmms10/Clustering-Techniques-on-MessiRonaldo">
-                <div class="card-body">
-                    <h5 class="card-title">Clustering Techniques on Messi and Ronaldo Stats</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 project-card">
-            <div class="card">
-                <img src="path/to/thumbnail9.jpg" alt="CNN Flower Classification" class="card-img-top project-thumbnail"
-                    data-bs-toggle="modal" data-bs-target="#projectModal" data-title="CNN Flower Classification"
-                    data-tech="VGG, ResNet, Ensemble, GoogleNet, Python"
-                    data-link="https://github.com/omarmms10/CNN-Flower-Classification">
-                <div class="card-body">
-                    <h5 class="card-title">CNN Flower Classification</h5>
-                </div>
-            </div>
-        </div>
-
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail1.jpg" alt="Data Acquisition System" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Data Acquisition System"
-                        data-tech="Arduino" data-link="https://github.com/omarmms10/Data-Acquisition-System">
-                    <div class="card-body">
-                        <h5 class="card-title">Data Acquisition System</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail2.jpg" alt="Emotions Classification" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Emotions Classification"
-                        data-tech="Logistic Regression, Python" data-link="https://github.com/omarmms10/Emotions-Classsifcation">
-                    <div class="card-body">
-                        <h5 class="card-title">Emotions Classification</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail3.jpg" alt="Face Recognition" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Face Recognition"
-                        data-tech="PCA, KNN, Python" data-link="https://github.com/omarmms10/Face-recognition">
-                    <div class="card-body">
-                        <h5 class="card-title">Face Recognition</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail4.jpg" alt="Football Store Website" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Football Store Website"
-                        data-tech="HTML, CSS, JavaScript, NodeJS" data-link="https://github.com/omarmms10/Football-Store-Website">
-                    <div class="card-body">
-                        <h5 class="card-title">Football Store Website</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail5.jpg" alt="HLHB Healthy and Fitness Website" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="HLHB Healthy and Fitness Website"
-                        data-tech="NodeJS, HTML, CSS, JS, Python, Flask" data-link="https://github.com/omarmms10/HLHB">
-                    <div class="card-body">
-                        <h5 class="card-title">HLHB Healthy and Fitness Website</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail6.jpg" alt="Neural Networks under PyTorch and TensorFlow"
-                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Neural Networks under PyTorch and TensorFlow" data-tech="Python"
-                        data-link="https://github.com/omarmms10/Implementing-neural-networks-under-Pytorch-and-Tensor-flow-to-compare-between-two-datasets">
-                    <div class="card-body">
-                        <h5 class="card-title">Neural Networks under PyTorch and TensorFlow</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail7.jpg" alt="Music Genre Classification" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Music Genre Classification"
-                        data-tech="Neural Network, Python" data-link="https://github.com/omarmms10/Music-Genre-Classification">
-                    <div class="card-body">
-                        <h5 class="card-title">Music Genre Classification</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail8.jpg" alt="Noise Detection Techniques in Images"
-                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Noise Detection Techniques in Images"
-                        data-tech="Salt-and-pepper noise, Sobel Edge, Canny Edge, Median Filter, Python"
-                        data-link="https://github.com/omarmms10/Noise-Detection-Techniques-in-images">
-                    <div class="card-body">
-                        <h5 class="card-title">Noise Detection Techniques in Images</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail9.jpg" alt="Robotic Arm" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Robotic Arm" data-tech="Arduino"
-                        data-link="https://github.com/omarmms10/Robotic-Arm">
-                    <div class="card-body">
-                        <h5 class="card-title">Robotic Arm</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail10.jpg" alt="Sports Shop Software" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Sports Shop Software"
-                        data-tech="Dataflow, ERD, Class Diagram, Sequence, Package, Activity, State Machine, Use Case"
-                        data-link="https://github.com/omarmms10/Sports-Shop-Software">
-                    <div class="card-body">
-                        <h5 class="card-title">Sports Shop Software</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail11.jpg" alt="Traffic Light" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Traffic Light" data-tech="Java"
-                        data-link="https://github.com/omarmms10/Traffic-Light-Java">
-                    <div class="card-body">
-                        <h5 class="card-title">Traffic Light</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail12.jpg" alt="Translation from English to French and Arabic"
-                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Translation from English to French and Arabic" data-tech="Bidirectional, LSTM, Python"
-                        data-link="https://github.com/omarmms10/Translation">
-                    <div class="card-body">
-                        <h5 class="card-title">Translation from English to French and Arabic</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail13.jpg" alt="Ventilator Pressure Prediction" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="Ventilator Pressure Prediction"
-                        data-tech="Box-Cox transformation, Bidirectional, LSTM, Python"
-                        data-link="https://github.com/omarmms10/ventilator-pressure-prediction">
-                    <div class="card-body">
-                        <h5 class="card-title">Ventilator Pressure Prediction</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 project-card">
-                <div class="card">
-                    <img src="path/to/thumbnail14.jpg" alt="XO Game (Player vs AI)" class="card-img-top project-thumbnail"
-                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="XO Game (Player vs AI)"
-                        data-tech="Minimax, Python" data-link="https://github.com/omarmms10/XO">
-                    <div class="card-body">
-                        <h5 class="card-title">XO Game (Player vs AI)</h5>
-                    </div>
-                </div>
-            </div>
-            </div>
-            </section>
+    </div>
 
     <!-- Thumbnail Modal -->
-<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p id="projectTech">Technology Stack</p>
-        <a href="#" id="projectLink" target="_blank" class="btn btn-primary">View Project</a>
-      </div>
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Project Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="projectTech">Technology Stack</p>
+                    <a href="#" id="projectLink" target="_blank" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-    
-    
+
+
     <!-- Education Section -->
     <section id="education" class="container my-5">
         <h2 class="section-title">Education</h2>
@@ -507,7 +711,7 @@
     <footer class="footer">
         <div class="container text-center">
             <p>© 2024 Omar Adly. All rights reserved.</p>
-    
+
             <!-- Social Media Icons -->
             <div class="social-links">
                 <a href="https://www.facebook.com/omar.adly.5268?mibextid=ZbWKwL" target="_blank">
@@ -534,23 +738,40 @@
         });
     </script>
     <script>
-    const projectModal = document.getElementById('projectModal');
-    projectModal.addEventListener('show.bs.modal', function (event) {
-        const button = event.relatedTarget;
-        const title = button.getAttribute('data-title');
-        const tech = button.getAttribute('data-tech');
-        const link = button.getAttribute('data-link');
+        const projectModal = document.getElementById('projectModal');
+        projectModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const title = button.getAttribute('data-title');
+            const tech = button.getAttribute('data-tech');
+            const link = button.getAttribute('data-link');
 
-        const modalTitle = projectModal.querySelector('.modal-title');
-        const modalTech = projectModal.querySelector('#projectTech');
-        const modalLink = projectModal.querySelector('#projectLink');
+            const modalTitle = projectModal.querySelector('.modal-title');
+            const modalTech = projectModal.querySelector('#projectTech');
+            const modalLink = projectModal.querySelector('#projectLink');
 
-        modalTitle.textContent = title;
-        modalTech.textContent = tech;
-        modalLink.href = link;
-    });
-</script>
+            modalTitle.textContent = title;
+            modalTech.textContent = tech;
+            modalLink.href = link;
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.project-thumbnail').on('click', function () {
+                const title = $(this).data('title');
+                const tech = $(this).data('tech');
+                const link = $(this).data('link');
+                const imgSrc = $(this).attr('src');
 
+                $('#projectModalLabel').text(title);
+                $('#projectModalTech').text('Technologies Used: ' + tech);
+                $('#projectModalLink').attr('href', link);
+                $('#projectModalImage').attr('src', imgSrc);
+            });
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
