@@ -13,132 +13,172 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f9f9f9;
+            color: #333;
         }
-
-        .project-thumbnail {
-            width: 100%;
-            height: 200px;
-            /* Adjust the height as needed */
-            object-fit: cover;
-            /* Ensures the image covers the area without distortion */
-            border-bottom: 1px solid #ddd;
-            /* Optional: adds a border at the bottom of the image */
-        }
-
-
-        .navbar {
-            background-color: #007bff;
-        }
-
-        .navbar-brand,
-        .nav-link {
-            color: white !important;
-        }
-
         .intro {
-            padding: 60px 0;
-            background-color: #007bff;
-            color: white;
-        }
+        padding: 60px 0;
+        background-color: #007bff;
+        color: white;
+    }
 
+    .intro h1 {
+        font-size: 3rem; /* Larger heading for emphasis */
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .intro p {
+        font-size: 1.5rem; /* Larger font size for the paragraph */
+        font-weight: 500;
+        color: #f0f0f0; /* Softer white for contrast */
+        letter-spacing: 1.5px; /* Adds spacing between letters for a refined look */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for a special effect */
+        margin-top: 10px;
+    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
         .section-title {
-            font-weight: 600;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
             margin-bottom: 30px;
         }
-
+    
+        .section-content {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+    
+        .section-content p,
+        .section-content ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    
         .skills-list {
             list-style: none;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-
+    
         .skills-list li {
-            display: inline-block;
             background: #007bff;
-            color: white;
-            padding: 5px 15px;
+            color: #fff;
+            padding: 10px 15px;
             border-radius: 20px;
-            margin: 5px;
-        }
-
-        .project-card {
-            margin-bottom: 20px;
-        }
-
-        .footer {
-            background-color: #007bff;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .navbar-brand img {
-            border: 2px solid white;
-        }
-
-        .navbar-brand span {
+            font-size: 0.95rem;
             font-weight: 500;
-            color: white;
-            font-size: 1.2rem;
         }
-
-        .footer .social-links a {
-            margin: 0 10px;
-            font-size: 24px;
-            color: white;
-            text-decoration: none;
+    
+        .skills-list li:hover {
+            background-color: #0056b3;
+            cursor: default;
         }
-
-        .footer .social-links a:hover {
-            color: #f0f0f0;
+    
+        ul {
+            padding-left: 20px;
         }
-
-        .project-card {
-            margin-bottom: 20px;
+    
+        ul li {
+            margin-bottom: 10px;
         }
-        .collapse {
-            margin-top: 10px;
-        }
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-        .section-subtitle {
-            font-size: 1.75rem;
-            font-weight: bold;
-            cursor: pointer;
+    
+        ul li a {
             color: #007bff;
-            transition: color 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
         }
-        .section-subtitle:hover {
+    
+        ul li a:hover {
+            text-decoration: underline;
             color: #0056b3;
         }
-        .project-category {
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            color: #495057;
+    
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
         }
-        .project-card {
-            margin-bottom: 30px;
+    
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #007bff;
+        }
+    
+        .contact-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    
+        .contact-item a:hover {
+            text-decoration: underline;
+            color: #0056b3;
         }
         .project-thumbnail {
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        .hover-shadow:hover .project-thumbnail {
-            transform: scale(1.05);
-        }
-        .card {
-            border: none;
-            transition: box-shadow 0.3s ease;
-        }
-        .hover-shadow:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
+        width: 100%;
+        height: 200px; /* Fixed height for all images */
+        object-fit: cover; /* Ensures images are cropped proportionally */
+    }
+
+    .project-card {
+        margin-bottom: 20px;
+    }
+
+    .card {
+        height: 100%; /* Makes all cards the same height */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-body {
+        flex-grow: 1; /* Ensures uniform spacing inside the card */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    #backToTop {
+        display: none; /* Hidden by default */
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        font-size: 18px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #backToTop:hover {
+        background-color: #0056b3;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #backToTop i {
+        font-size: 1.2rem;
+    }
     </style>
 </head>
 
@@ -201,7 +241,7 @@
     <section class="intro text-center">
         <div class="container">
             <h1>Omar Adly</h1>
-            <p>Machine Learning & Software Engineering Enthusiast</p>
+            <p>Full Stack Developer</p>
 
         </div>
     </section>
@@ -210,398 +250,138 @@
     <!-- About Section -->
     <section id="about" class="container my-5">
         <h2 class="section-title">Summary</h2>
-        <p>An ambitious and detail-oriented Machine Learning and Software Engineering enthusiast, with a solid academic
-            foundation
-            and hands-on experience in developing innovative solutions. Skilled in various programming languages and
-            tools, with a
-            strong emphasis on full-stack development, artificial intelligence, and problem-solving. Eager to contribute
-            to
-            impactful projects while continuously expanding knowledge in cutting-edge technologies. A dedicated
-            professional aiming
-            to leverage technical expertise and collaborative skills to achieve team goals and deliver high-quality
-            results in a
-            fast-paced environment.</p>
+        <p>Full Stack Developer with expertise in building robust, scalable web applications. Proficient in .NET, Python, and
+        modern JavaScript frameworks. Experienced in creating responsive user interfaces, managing databases, and optimizing API
+        endpoints. Passionate about AI, ML, and delivering high-quality software solutions.</p>
     </section>
 
 
 
     <!-- Projects Section -->
     <section id="projects" class="container my-5">
-        <h2 class="section-title text-center mb-4">Accomplishments & Projects</h2>
-    
-        <!-- Web Development -->
-        <div class="mb-4">
-            <h3 class="section-subtitle" data-toggle="collapse" data-target="#webDevCollapse">Web Development</h3>
-            <div id="webDevCollapse" class="collapse">
-        
-                <!-- General Web Development Projects -->
-                <h4 class="project-category" data-toggle="collapse" data-target="#generalProjectsCollapse">General Projects</h4>
-                <div id="generalProjectsCollapse" class="collapse">
-                    <div class="row">
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/AIO.png" alt="Digital Marketing Website AIO"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Digital Marketing Website AIO" data-tech="HTML, CSS, JavaScript"
-                                    data-link="https://github.com/your-repo/DigitalMarketing">
-                                <div class="card-body">
-                                    <h5 class="card-title">Digital Marketing Website AIO</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/BookStore.jpg" alt="Book Store Website"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Book Store Website" data-tech="HTML, CSS, PHP, SQL"
-                                    data-link="https://github.com/your-repo/BookStore">
-                                <div class="card-body">
-                                    <h5 class="card-title">Book Store Website</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/FootballStore.jpg" alt="Football Store Website"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Football Store Website" data-tech="HTML, CSS, JavaScript, NodeJS"
-                                    data-link="https://github.com/your-repo/FootballStore">
-                                <div class="card-body">
-                                    <h5 class="card-title">Football Store Website</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/HLHB.png" alt="HLHB Healthy and Fitness Website"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="HLHB Healthy and Fitness Website"
-                                    data-tech="NodeJS, HTML, CSS, JavaScript, Python, Flask"
-                                    data-link="https://github.com/your-repo/HLHB">
-                                <div class="card-body">
-                                    <h5 class="card-title">HLHB Healthy and Fitness Website</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- ASP.NET Projects -->
-                <h4 class="project-category" data-toggle="collapse" data-target="#aspNetProjectsCollapse">ASP.NET Projects</h4>
-                <div id="aspNetProjectsCollapse" class="collapse">
-                    <div class="row">
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/DutyMaster.png" alt="Task Management System - DutyMaster"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Task Management System - DutyMaster"
-                                    data-tech="ASP.NET, C#, SQL, Bootstrap 4, HTML5, CSS3, JavaScript"
-                                    data-link="https://github.com/your-repo/DutyMaster">
-                                <div class="card-body">
-                                    <h5 class="card-title">Task Management System - DutyMaster</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/ProgrammingTutor.png" alt="Programming Tutor for Kids"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Programming Tutor for Kids"
-                                    data-tech="ASP.NET, C#, SQL, Bootstrap 4, HTML5, CSS3, JavaScript"
-                                    data-link="https://github.com/your-repo/ProgrammingTutor">
-                                <div class="card-body">
-                                    <h5 class="card-title">Programming Tutor for Kids</h5>
-                                </div>
-                            </div>
-                        </div>
+        <h2 class="section-title text-center mb-4">Projects</h2>
+        <div class="row">
+            <!-- Project Cards -->
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/HLHB.png" alt="HLHB Healthy and Fitness Website"
+                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="HLHB Healthy and Fitness Website"
+                        data-tech="NodeJS, HTML, CSS, JavaScript, Python, Flask"
+                        data-link="https://github.com/omarmms10/HLHB">
+                    <div class="card-body">
+                        <h5 class="card-title">HLHB Healthy and Fitness Website</h5>
                     </div>
                 </div>
             </div>
-        </div>
-
-
     
-        <!-- Data Science & Machine Learning -->
-        <div class="mb-4">
-            <h3 class="section-subtitle" data-toggle="collapse" data-target="#dsmlCollapse">Data Science & Machine Learning</h3>
-            <div id="dsmlCollapse" class="collapse">
-        
-                <!-- Classification Projects -->
-                <h4 class="project-category" data-toggle="collapse" data-target="#classificationProjectsCollapse">Classification
-                    Projects</h4>
-                <div id="classificationProjectsCollapse" class="collapse">
-                    <div class="row">
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/CancerDetection.jpg" alt="Cancer Detection"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Cancer Detection"
-                                    data-tech="Logistic Regression, KNN, Decision Trees, Random Forests, Python"
-                                    data-link="https://github.com/omarmms10/Cancer-Detection">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cancer Detection</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/EmotionClassi.jpg" alt="Emotions Classification"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Emotions Classification" data-tech="Logistic Regression, Python"
-                                    data-link="https://github.com/omarmms10/Emotions-Classsifcation">
-                                <div class="card-body">
-                                    <h5 class="card-title">Emotions Classification</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/MusicGenreClassi.jpg" alt="Music Genre Classification"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Music Genre Classification" data-tech="Neural Network, Python"
-                                    data-link="https://github.com/omarmms10/Music-Genre-Classification">
-                                <div class="card-body">
-                                    <h5 class="card-title">Music Genre Classification</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/FlowerClassi.jpg" alt="CNN Flower Classification"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="CNN Flower Classification" data-tech="VGG, ResNet, Ensemble, GoogleNet, Python"
-                                    data-link="https://github.com/omarmms10/CNN-Flower-Classification">
-                                <div class="card-body">
-                                    <h5 class="card-title">CNN Flower Classification</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/CatsDogsRecog.jpg" alt="Cats and Dogs Speech Recognition"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Cats and Dogs Speech Recognition" data-tech="Neural Network, Python"
-                                    data-link="https://github.com/omarmms10/Cats-and-Dogs-speech-Recognition">
-                                <div class="card-body">
-                                    <h5 class="card-title">Cats and Dogs Speech Recognition</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Prediction & Analysis Projects -->
-                <h4 class="project-category" data-toggle="collapse" data-target="#predictionAnalysisCollapse">Prediction &
-                    Analysis Projects</h4>
-                <div id="predictionAnalysisCollapse" class="collapse">
-                    <div class="row">
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/MoviesSentimentAnalysis.jpeg"
-                                    alt="Analyzing Movie Reviews (Sentiment Analysis)" class="card-img-top project-thumbnail"
-                                    data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Analyzing Movie Reviews (Sentiment Analysis)" data-tech="BERT, ROBERTA, Python"
-                                    data-link="https://github.com/omarmms10/Analyzing-Movies-Reviews-Sentiment-Analysis-Using-BERT-and-ROBERTA">
-                                <div class="card-body">
-                                    <h5 class="card-title">Analyzing Movie Reviews (Sentiment Analysis)</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/Ventilator.jpg" alt="Ventilator Pressure Prediction"
-                                    class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Ventilator Pressure Prediction"
-                                    data-tech="Box-Cox transformation, Bidirectional LSTM, Python"
-                                    data-link="https://github.com/omarmms10/Ventilator-Pressure-Prediction">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ventilator Pressure Prediction</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 project-card">
-                            <div class="card shadow-sm hover-shadow">
-                                <img src="./imgs/ProjectsImgs/Translating.jpg"
-                                    alt="Translation from English to French and Arabic" class="card-img-top project-thumbnail"
-                                    data-bs-toggle="modal" data-bs-target="#projectModal"
-                                    data-title="Translation from English to French and Arabic"
-                                    data-tech="Bidirectional LSTM, Python"
-                                    data-link="https://github.com/omarmms10/Translation-from-English-to-French-and-Arabic">
-                                <div class="card-body">
-                                    <h5 class="card-title">Translation from English to French and Arabic</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <h4 class="project-category" data-toggle="collapse" data-target="#neuralNetworkFrameworksCollapse">Neural Network
-                    Frameworks</h4>
-                <div id="neuralNetworkFrameworksCollapse" class="collapse">
-                <div class="row">
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/ANN.jpg"
-                                alt="Building Artificial Neural Network from Scratch" class="card-img-top project-thumbnail"
-                                data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Building Artificial Neural Network from Scratch" data-tech="Python"
-                                data-link="https://github.com/omarmms10/Building-Artificial-Neural-Network-from-Scratch">
-                            <div class="card-body">
-                                <h5 class="card-title">Building Artificial Neural Network from Scratch</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/PyTen.jpg"
-                                alt="Neural Networks under PyTorch and TensorFlow" class="card-img-top project-thumbnail"
-                                data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Neural Networks under PyTorch and TensorFlow" data-tech="Python"
-                                data-link="https://github.com/omarmms10/Neural-Networks-Under-PyTorch-and-TensorFlow">
-                            <div class="card-body">
-                                <h5 class="card-title">Neural Networks under PyTorch and TensorFlow</h5>
-                            </div>
-                        </div>
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/DutyMaster.png" alt="Task Management System - DutyMaster"
+                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Task Management System - DutyMaster"
+                        data-tech="ASP.NET, C#, SQL, Bootstrap 4, HTML5, CSS3"
+                        data-link="https://github.com/omarmms10/DutyMaster">
+                    <div class="card-body">
+                        <h5 class="card-title">Task Management System - DutyMaster</h5>
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-        <!-- Embedded Systems & Hardware Control -->
-        <div class="mb-4">
-            <h3 class="section-subtitle" data-toggle="collapse" data-target="#embeddedCollapse">Embedded Systems & Hardware
-                Control</h3>
-            <div id="embeddedCollapse" class="collapse">
-                <div class="row">
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/BalanceBall.jpeg" alt="Balancing a Ball on Beam"
-                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Balancing a Ball on Beam" data-tech="Arduino"
-                                data-link="https://github.com/omarmms10/Balancing-a-Ball-on-Beam">
-                            <div class="card-body">
-                                <h5 class="card-title">Balancing a Ball on Beam</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/RobotArm.jpg" alt="Robotic Arm"
-                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Robotic Arm" data-tech="Arduino"
-                                data-link="https://github.com/omarmms10/Robotic-Arm">
-                            <div class="card-body">
-                                <h5 class="card-title">Robotic Arm</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/DataAcqui.jpg" alt="Data Acquisition System"
-                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Data Acquisition System" data-tech="Arduino"
-                                data-link="https://github.com/omarmms10/Data-Acquisition-System">
-                            <div class="card-body">
-                                <h5 class="card-title">Data Acquisition System</h5>
-                            </div>
-                        </div>
+    
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/CancerDetection.jpg" alt="Cancer Detection"
+                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Cancer Detection"
+                        data-tech="Logistic Regression, KNN, Decision Trees, Random Forests, Python"
+                        data-link="https://github.com/omarmms10/Cancer-Detection">
+                    <div class="card-body">
+                        <h5 class="card-title">Cancer Detection</h5>
                     </div>
                 </div>
             </div>
-        </div>
     
-        <!-- Image Processing & Computer Vision -->
-        <div class="mb-4">
-            <h3 class="section-subtitle" data-toggle="collapse" data-target="#imageProcessingCollapse">Image Processing &
-                Computer Vision</h3>
-            <div id="imageProcessingCollapse" class="collapse">
-                <div class="row">
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/NoiseDetec.jpg" alt="Noise Detection Techniques in Images"
-                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Noise Detection Techniques in Images"
-                                data-tech="Salt-and-pepper noise, Sobel Edge, Canny Edge, Median Filter, Python"
-                                data-link="https://github.com/omarmms10/Noise-Detection-Techniques">
-                            <div class="card-body">
-                                <h5 class="card-title">Noise Detection Techniques in Images</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/FaceRecognition.jpg" alt="Face Recognition"
-                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Face Recognition" data-tech="PCA, KNN, Python"
-                                data-link="https://github.com/omarmms10/Face-Recognition">
-                            <div class="card-body">
-                                <h5 class="card-title">Face Recognition</h5>
-                            </div>
-                        </div>
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/MoviesSentimentAnalysis.jpeg"
+                        alt="Analyzing Movie Reviews (Sentiment Analysis)" class="card-img-top project-thumbnail"
+                        data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Analyzing Movie Reviews (Sentiment Analysis)" data-tech="BERT, ROBERTA, Python"
+                        data-link="https://github.com/omarmms10/Analyzing-Movies-Reviews-Sentiment-Analysis-Using-BERT-and-ROBERTA">
+                    <div class="card-body">
+                        <h5 class="card-title">Analyzing Movie Reviews (Sentiment Analysis)</h5>
                     </div>
                 </div>
             </div>
-        </div>
     
-        <!-- Clustering & Statistical Analysis -->
-        <div class="mb-4">
-            <h3 class="section-subtitle" data-toggle="collapse" data-target="#clusteringCollapse">Clustering & Statistical
-                Analysis</h3>
-            <div id="clusteringCollapse" class="collapse">
-                <div class="row">
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/MessiRonaldo.jpg"
-                                alt="Clustering Techniques on Messi and Ronaldo Stats"
-                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Clustering Techniques on Messi and Ronaldo Stats"
-                                data-tech="Naive Bayes, K-Medoids, Agglomerative Hierarchical, Python"
-                                data-link="https://github.com/omarmms10/Clustering-Techniques-Messi-Ronaldo-Stats">
-                            <div class="card-body">
-                                <h5 class="card-title">Clustering Techniques on Messi and Ronaldo Stats</h5>
-                            </div>
-                        </div>
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/FlowerClassi.jpg" alt="CNN Flower Classification"
+                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="CNN Flower Classification" data-tech="VGG, ResNet, Ensemble, GoogleNet, Python"
+                        data-link="https://github.com/omarmms10/CNN-Flower-Classification">
+                    <div class="card-body">
+                        <h5 class="card-title">CNN Flower Classification</h5>
                     </div>
                 </div>
             </div>
-        </div>
     
-        <!-- Game Development -->
-        <div class="mb-4">
-            <h3 class="section-subtitle" data-toggle="collapse" data-target="#gameDevCollapse">Game Development</h3>
-            <div id="gameDevCollapse" class="collapse">
-                <div class="row">
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/XO.jpg" alt="XO Game" class="card-img-top project-thumbnail"
-                                data-bs-toggle="modal" data-bs-target="#projectModal" data-title="XO Game"
-                                data-tech="Minimax, Python" data-link="https://github.com/omarmms10/XO-Game">
-                            <div class="card-body">
-                                <h5 class="card-title">XO Game (Player vs AI)</h5>
-                            </div>
-                        </div>
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/CatsDogsRecog.jpg" alt="Cats and Dogs Speech Recognition"
+                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Cats and Dogs Speech Recognition" data-tech="Neural Network, Python"
+                        data-link="https://github.com/omarmms10/Cats-and-Dogs-speech-Recognition">
+                    <div class="card-body">
+                        <h5 class="card-title">Cats and Dogs Speech Recognition</h5>
                     </div>
                 </div>
             </div>
-        </div>
     
-        <!-- Software Modeling & Design -->
-        <div class="mb-4">
-            <h3 class="section-subtitle" data-toggle="collapse" data-target="#modelingCollapse">Software Modeling & Design
-            </h3>
-            <div id="modelingCollapse" class="collapse">
-                <div class="row">
-                    <div class="col-md-4 project-card">
-                        <div class="card shadow-sm hover-shadow">
-                            <img src="./imgs/ProjectsImgs/SportsShopSoftware.jpg" alt="Sports Shop Software"
-                                class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
-                                data-title="Sports Shop Software"
-                                data-tech="Dataflow, ERD, Class Diagram, Sequence, Package, Activity, State Machine, Use Case"
-                                data-link="https://github.com/omarmms10/Sports-Shop-Software">
-                            <div class="card-body">
-                                <h5 class="card-title">Sports Shop Software</h5>
-                            </div>
-                        </div>
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/MusicGenreClassi.jpg" alt="Music Genre Classification"
+                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Music Genre Classification" data-tech="Neural Network, Python"
+                        data-link="https://github.com/omarmms10/Music-Genre-Classification">
+                    <div class="card-body">
+                        <h5 class="card-title">Music Genre Classification</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/EmotionClassi.jpg" alt="Emotions Classification"
+                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Emotions Classification" data-tech="Logistic Regression, Python"
+                        data-link="https://github.com/omarmms10/Emotions-Classsifcation">
+                    <div class="card-body">
+                        <h5 class="card-title">Emotions Classification</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/XO.jpg" alt="XO Game" class="card-img-top project-thumbnail"
+                        data-bs-toggle="modal" data-bs-target="#projectModal" data-title="XO Game"
+                        data-tech="Minimax, Python" data-link="https://github.com/omarmms10/XO-Game">
+                    <div class="card-body">
+                        <h5 class="card-title">XO Game (Player vs AI)</h5>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 project-card">
+                <div class="card shadow-sm hover-shadow">
+                    <img src="./imgs/ProjectsImgs/NoiseDetec.jpg" alt="Noise Detection Techniques in Images"
+                        class="card-img-top project-thumbnail" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Noise Detection Techniques in Images"
+                        data-tech="Salt-and-pepper noise, Sobel Edge, Canny Edge, Median Filter, Python"
+                        data-link="https://github.com/omarmms10/Noise-Detection-Techniques">
+                    <div class="card-body">
+                        <h5 class="card-title">Noise Detection Techniques in Images</h5>
                     </div>
                 </div>
             </div>
@@ -644,91 +424,135 @@
 
 
 
-    <!-- Education Section -->
-    <section id="education" class="container my-5">
-        <h2 class="section-title">Education</h2>
-        <p><strong>Faculty of Computers and Data Science</strong>, Alexandria University (2021-2024)</p>
-        <p>Intelligent Systems Department, GPA: 3.5379</p>
-        <p><strong>British Language School</strong>, Graduated in 2020</p>
-    </section>
+<!-- Education Section -->
+<section id="education" class="container my-5">
+    <h2 class="section-title">Education</h2>
+    <div class="section-content">
+        <p><strong>Bachelor Degree of Computer Science</strong>, Faculty of Computers and Data Science, Alexandria
+            University (2021-2024)</p>
+        <p>Specialization: Intelligent Systems | GPA: 3.5379 (Excellent)</p>
+        <p><strong>Relevant Coursework:</strong> Artificial Intelligence, Machine Learning, Database Management, Web
+            Development</p>
+    </div>
+</section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="container my-5">
-        <h2 class="section-title">Certifications</h2>
+<!-- Certifications Section -->
+<section id="certifications" class="container my-5">
+    <h2 class="section-title">Certifications</h2>
+    <div class="section-content">
         <ul>
-            <li>Certificate for Completing ITI Android Training</li>
-            <li>Certificate for Completing AI Internship in Digital Hub Company</li>
-            <li>Certificate for Participating with ICPC Community</li>
-            <li>Certificate for Completing Web Development Internship in Ezz Steel Company</li>
+            <li>Certificate for Completing ITI Android Training - <em>Issued by ITI (2023)</em></li>
+            <li>Certificate for Completing AI Internship in Digital Hub Company - <em>(2023)</em></li>
+            <li>Certificate for Participating with ICPC Community - <em>(2022)</em></li>
+            <li>Certificate for Completing Web Development Internship in Ezz Steel Company - <em>(2023)</em></li>
             <li>Certificate for Completing Internship with Ministry of Communications and Information Technology in
-                Software Development - ASP.Net Web Developer</li>
+                Software Development - ASP.Net Web Developer - <em>(2023)</em></li>
         </ul>
-    </section>
+    </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="container my-5">
-        <h2 class="section-title">Skills</h2>
+<!-- Skills Section -->
+<section id="skills" class="container my-5">
+    <h2 class="section-title">Skills</h2>
+    <div class="section-content">
         <ul class="skills-list">
-            <li>Problem-Solving</li>
-            <li>Communication Skills</li>
-            <li>Software Proficiency</li>
-            <li>Multitasking Abilities</li>
-            <li>Self-Motivated</li>
-            <li>Training and Development</li>
-            <li>Software Development</li>
-            <li>SQL</li>
-            <li>Database Programming</li>
-            <li>Software Applications</li>
-            <li>Machine Learning</li>
-            <li>C Sharp</li>
+            <li>C#</li>
             <li>.Net</li>
-            <li>NLP</li>
+            <li>Python</li>
+            <li>SQL</li>
             <li>JavaScript</li>
             <li>HTML</li>
-            <li>Web-Based Software Engineering</li>
-            <li>Full-Stack Development</li>
             <li>CSS</li>
-            <li>Java</li>
-            <li>PYTHON</li>
-            <li>C++</li>
+            <li>Flask</li>
+            <li>ASP.Net</li>
+            <li>Bootstrap</li>
+            <li>Visual Studio</li>
+            <li>Postman</li>
+            <li>GitHub</li>
+            <li>Problem-Solving</li>
+            <li>Communication</li>
+            <li>Multitasking</li>
+            <li>Machine Learning</li>
+            <li>NLP</li>
+            <li>Full-Stack Development</li>
         </ul>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container my-5">
-        <h2 class="section-title">Contact</h2>
+<!-- Contact Section -->
+<section id="contact" class="container my-5">
+    <h2 class="section-title">Contact</h2>
+    <div class="section-content">
         <p>If you'd like to get in touch, feel free to contact me through the following channels:</p>
-        <ul>
-            <li><strong>Email:</strong> omaradlymms@gmail.com</li>
-            <li><strong>Phone:</strong> 01062727080</li>
-            <li><strong>Location:</strong> Alexandria, Egypt</li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/omar-adly-bba664207/"
-                    target="_blank">Omar Adly</a></li>
-        </ul>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container text-center">
-            <p>© 2024 Omar Adly. All rights reserved.</p>
-
-            <!-- Social Media Icons -->
-            <div class="social-links">
-                <a href="https://www.facebook.com/omar.adly.5268?mibextid=ZbWKwL" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/omar_adly_27?igsh=MWo0ZXVhc25yZWhyMw==" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/omar-adly-bba664207/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://www.elharefa.com/en/freelancers/p/omaradly27" target="_blank">
-                    <i class="fas fa-briefcase"></i>
-                </a>
-            </div>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:omaradlymms@gmail.com">omaradlymms@gmail.com</a>
         </div>
-    </footer>
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+201062727080">+20 106 272 7080</a>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            Alexandria, Egypt
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/omar-adly-bba664207/" target="_blank">LinkedIn Profile</a>
+        </div>
+        <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/omarmms10/Portofolio" target="_blank">GitHub Portfolio</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer mt-5">
+    <div class="container text-center py-4">
+        <p class="mb-3" style="font-size: 1.2rem; font-weight: 500;">© 2024 Omar Adly. All rights reserved.</p>
+        <div class="social-links d-flex justify-content-center">
+            <a href="https://www.facebook.com/omar.adly.5268?mibextid=ZbWKwL" target="_blank" class="mx-2">
+                <i class="fab fa-facebook-f" style="font-size: 1.5rem; color: #4267B2;"></i>
+            </a>
+            <a href="https://www.instagram.com/omar_adly_27?igsh=MWo0ZXVhc25yZWhyMw==" target="_blank" class="mx-2">
+                <i class="fab fa-instagram" style="font-size: 1.5rem; color: #C13584;"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/omar-adly-bba664207/" target="_blank" class="mx-2">
+                <i class="fab fa-linkedin" style="font-size: 1.5rem; color: #0077B5;"></i>
+            </a>
+            <a href="https://www.elharefa.com/en/freelancers/p/omaradly27" target="_blank" class="mx-2">
+                <i class="fas fa-briefcase" style="font-size: 1.5rem; color: #6c757d;"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+<!-- Back to Top Button -->
+<button id="backToTop" title="Go to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<script>
+    // Get the button
+    const backToTopButton = document.getElementById('backToTop');
+
+    // Show the button when scrolling down
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    };
+
+    // Scroll to the top when the button is clicked
+    backToTopButton.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
 
     <script>
         // Trigger modal when profile image is clicked
